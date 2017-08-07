@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  web:
+    build: .
+    links:
+      - db
+    command: tail -f /var/log/apache2/access.log
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8000:80"
