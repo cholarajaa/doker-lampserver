@@ -3,8 +3,7 @@ services:
 
   web:
     build: .
-    links:
-      - db
+    image: 'php:1.1'
     command: tail -f /var/log/apache2/access.log
     volumes:
       - .:/var/www/html
